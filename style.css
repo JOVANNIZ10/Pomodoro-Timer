@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Esto es el selector universal * aplica las reglas a tos elementos html */
+* {
+    /* evitan (margin, padding) que el navegador aplique margenes y espacios automaticos que pueden desordenar tu diseño*/
+    margin: 0; 
+    padding: 0;
+    /* Facilita el control del tamaño de los elementos */
+    box-sizing: border-box;
+    /* Establece una tipografia uniforme */
+    font-family: "Poppins", sans-serif;
+}
+/* Esta etiqueta sirve para aplicar estilos al <> de la página */
+body{
+    background-color: #1e213f;
+    color: #d7e0ff;
+}
+
+.container {
+    text-align: center;  /* Centra horizontalmente el texto y elementos inline dentro del contenedor */
+    width: 100%;         /* Ocupa todo el ancho disponible del elemento padre (normalmente el body) */
+    padding: 10px 0;     /* Espaciado interno arriba y abajo de 10px, izquierda y derecha 0 */
+}
+
+.timer{
+    display: inline-block;
+    padding: 10px;
+    width: 600px;
+    box-sizing: border-box;
+}
+
+/* Esto creara un circulo con mi contenido centrado dentro, con espacio debajo para otros elementos */
+main {
+    width: 25rem;              /* ancho del contenedor (aprox. 400px si 1rem=16px) */
+    height: 25rem;             /* altura igual al ancho para que sea un círculo perfecto */
+    border-radius: 50%;        /* hace que los bordes se redondeen al 100%, formando un círculo */
+    text-align: center;        /* centra el texto u otros elementos inline dentro del main */
+    margin: 0 auto;            /* centra horizontalmente el contenedor en la página */
+    margin-bottom: 2rem;      /* agrega espacio debajo del main */
+}
+
+h1{
+    font-size: 2rem;
+    margin: 20px auto; /* margen izquierda y derecha se calculan automaticamente por el navegador */
+}
+
+.button-container{
+    margin-top: 20px; 
+    display: flex; /*activa flexbox, un modelo de diseño moderno de css. Permite alinear y distribuir los elementos hijos dentro del contenedor de manera flexible, tanto horizontal como verticalmente.*/
+    justify-content: center;
+}
+
+.pomodoro{
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 2.5rem 0;
+    text-align: center;
+    border-radius: 50%;
+    background: #151932;
+    box-shadow: 20px 20px 42px #0e1021, -20px -20px 42px #1c2244; /*box-shadow: offset-x offset-y blur-radius color; en este caso hemos aplicado dos sombras*/
+}
+
+.pomodoro::before{
+    content: "";
+    position: absolute;
+    border: 10px solid royalblue;
+    border-radius: 50%;
+    width: 22rem;
+    height: 22rem;
+}
+
+.time{
+    font-size: 5rem !important;
+    margin: 20px auto;
+}
+
+.button{
+    background-color: #2e325a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.button.active, .button:hover{
+    background-color: #020323;
+}
+
+.hiden{
+    display: block;
+}
+
+.timer-display{
+    font-size: 5rem;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.buttons{
+    margin-top: 60px;
+
+}
+
+#start, #stop{
+    background-color: #2e325a;
+    color:#ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+#stop:hover{
+    background-color: tomato;
+}
+
+#start:hover{
+    background-color: #219a52;
+}
+
+ #timer-message{
+    color: white;
+    background-color: tomato;
+    display:none;
+    padding: .5rem;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+ }
+
+ .firma {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6); /* Blanco translúcido */
+  font-family: 'Poppins', sans-serif;
+  pointer-events: none; /* No interfiere con clics */
+}
+.firma span {
+  font-weight: 500;
+}
+
+ /* Responsiveness */
+ @media screen and (min-width: 320px) and (max-width: 600px){
+    .container{
+        transform: scale(0.9);
+    }
+    .timer {
+        width:500px;
+        
+    }
+ }
