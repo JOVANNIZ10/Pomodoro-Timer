@@ -20,6 +20,11 @@ body{
     text-align: center;  /* Centra horizontalmente el texto y elementos inline dentro del contenedor */
     width: 100%;         /* Ocupa todo el ancho disponible del elemento padre (normalmente el body) */
     padding: 10px 0;     /* Espaciado interno arriba y abajo de 10px, izquierda y derecha 0 */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 .timer{
@@ -131,11 +136,13 @@ h1{
  #timer-message{
     color: white;
     background-color: tomato;
-    display:none;
-    padding: .5rem;
+    display: none;
+    padding: 0.5rem;
     font-size: 1rem;
     text-align: center;
     border-radius: 1rem;
+    width: 100%;              /* Asegura que ocupe todo el ancho */
+    box-sizing: border-box;
  }
 
  .firma {
